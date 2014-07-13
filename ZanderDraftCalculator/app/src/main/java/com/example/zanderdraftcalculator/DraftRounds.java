@@ -1,6 +1,7 @@
 package com.example.zanderdraftcalculator;
 
 import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import controls.PlayerHelper;
 import objects.Draft;
 
-public class DraftRounds extends Activity implements AdapterView.OnItemClickListener {
+public class DraftRounds extends FragmentActivity implements AdapterView.OnItemClickListener {
     private objects.Draft draft;
     private ListView playerView;
     private ListView pointsView;
@@ -55,39 +56,6 @@ public class DraftRounds extends Activity implements AdapterView.OnItemClickList
         rightPlayer.setAdapter(rightPlayerAdapter);
 
         leftPlayer.setOnItemClickListener(this);
-
-        final ArrayList<String> playerNamesList = PlayerHelper.getNameList(draft.getPlayers());
-        final ArrayList<Integer> playerWinsList = PlayerHelper.getWinsList(draft.getPlayers());
-        final ArrayList<String> playerOMWList = PlayerHelper.getOMWList(draft.getPlayers());
-        final ArrayList<Integer> playerRanks = PlayerHelper.getRanks(draft.getPlayers().size());
-
-        playerView = (ListView) findViewById(R.id.players2);
-        pointsView = (ListView) findViewById(R.id.points2);
-        omwView = (ListView) findViewById(R.id.omw2);
-        rankings = (ListView) findViewById(R.id.rank2);
-
-        final ArrayAdapter<Integer> playerRanksAdapter = new ArrayAdapter<Integer>(
-                this,
-                android.R.layout.simple_list_item_1,
-                playerRanks);
-
-        final ArrayAdapter<String> playerNamesAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                playerNamesList);
-        final ArrayAdapter<Integer> playerPointsAdapter = new ArrayAdapter<Integer>(
-                this,
-                android.R.layout.simple_list_item_1,
-                playerWinsList);
-        final ArrayAdapter<String> playerOMWAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                playerOMWList);
-
-        playerView.setAdapter(playerNamesAdapter);
-        pointsView.setAdapter(playerPointsAdapter);
-        omwView.setAdapter(playerOMWAdapter);
-        rankings.setAdapter(playerRanksAdapter);
     }
 
     public void NextRound(View view) {

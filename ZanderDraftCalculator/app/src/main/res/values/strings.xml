@@ -43,5 +43,6 @@
     <string name="title_activity_draft_table">Draft Table</string>
     <string name="title_activity_draft_rounds">Draft Rounds</string>
     <string name="title_activity_create_game_results">Create Game Results</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

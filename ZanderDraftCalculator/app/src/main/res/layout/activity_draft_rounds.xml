@@ -34,30 +34,12 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="400dp">
-
-        <ListView
-            android:id="@+id/rank2"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"></ListView>
-
-        <ListView
-            android:id="@+id/players2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"></ListView>
-
-        <ListView
-            android:id="@+id/points2"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"></ListView>
-
-        <ListView
-            android:id="@+id/omw2"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"></ListView>
-    </LinearLayout>
+    <fragment
+        android:name="com.example.zanderdraftcalculator.CreateUpdateRecord"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/createUpdateRecord_fragment"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_create_update_record" />
 
 </LinearLayout>
