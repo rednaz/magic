@@ -9,14 +9,20 @@ public class Scorecard {
     private ArrayList<Match> matches;
     private ArrayList<Colors> colors;
     private Themes theme;
-
+    private int round;
     public Scorecard () {
         this.matches = new ArrayList<Match>();
         this.colors = new ArrayList<Colors>();
+
+    }
+
+    public int getRound () {
+        return this.round;
     }
 
     public void AddMatch (Match match) {
         this.matches.add(match);
+        this.round++;
     }
     public ArrayList<Match> GetMatches () {
         return this.matches;

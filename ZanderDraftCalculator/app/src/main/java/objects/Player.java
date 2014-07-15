@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class Player implements Serializable {
     private String name;
+    private Scorecard scorecard;
+
     private ArrayList<Record> myRecord;
     private ArrayList<GameResults> currResults;
     private ArrayList<Player> opponents;
@@ -32,5 +34,16 @@ public class Player implements Serializable {
 
     public ArrayList<Player> GetOpponents() {
         return this.opponents;
+    }
+
+    public Scorecard getScorecard () {
+        return this.scorecard;
+    }
+
+    public void addMatch (Match match) {
+        if (this.scorecard == null)
+            scorecard = new Scorecard();
+
+        this.scorecard.AddMatch(match);
     }
 }
